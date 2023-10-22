@@ -1,0 +1,16 @@
+{
+  "name": "cypress-308-test",
+  "scripts": {
+    "open": "cypress open --e2e --browser firefox",
+    "cypress:run": "cypress run",
+    "test": "start-server-and-test start-server http://localhost:3000/target cypress:run",
+    "start-server": "node server.js"
+  },
+  "devDependencies": {
+    "cypress": "^13.3.2"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "start-server-and-test": "^2.0.1"
+  }
+}
