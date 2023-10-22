@@ -46,12 +46,13 @@ describe('308 redirect', () => {
 ### serve configuration
 
 ```js
-module.exports = (req, res, next) => {
-  if (req.path != "/target")
-    res.redirect(308, "/target");
-  else
-    res.status(200).send(req.method);
-};
+app.all('/test', (req, res) => {
+  res.redirect(308, "/target");
+});
+
+app.all('/target', (req, res) => {
+  res.send(req.method);
+});
 ```
 
 ## Cypress version
